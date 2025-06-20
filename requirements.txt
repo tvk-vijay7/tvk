@@ -1,0 +1,5 @@
+flask
+flask-sqlalchemy
+email-validator
+gunicorn
+psycopg2-binary
