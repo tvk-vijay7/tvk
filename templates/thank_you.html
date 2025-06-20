@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Blood Donor Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .thank-you-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #fff6f6, #ffe6e6);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #e60000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+        h2 {
+            color: #e60000;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .message {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .back-button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="thank-you-container">
+            <div class="success-icon">
+                <svg class="checkmark" viewBox="0 0 52 52">
+                    <path d="M14 27l8 8 16-16"/>
+                </svg>
+            </div>
+            
+            <h2>Thank You!</h2>
+            
+            <div class="message">
+                <p>Thank you for registering as a blood donor!</p>
+                <p>Your generous contribution can help save lives in Tamil Nadu.</p>
+                <p>We appreciate your commitment to the TVK blood donation network.</p>
+            </div>
+            
+            <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; 2025 CREATED BY TVK KISHORE.K FROM AVADI,KANNADAPALAYAM
+    </footer>
+</body>
+</html>

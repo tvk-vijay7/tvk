@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Blood Donor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <style>
+        /* Make sure buttons are visible and styled */
+        button {
+            background-color: #e60000;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #b30000;
+        }
+        /* Optional: style for Back to Home button */
+        .back-button {
+            background-color: #555;
+            margin-left: 10px;
+        }
+        .back-button:hover {
+            background-color: #333;
+        }
+        /* Form inputs */
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            font-size: 16px;
+        }
+        /* Suggestions list */
+        ul.suggestions {
+            list-style: none;
+            padding-left: 0;
+            max-width: 80%;
+            margin: 0 auto 10px;
+            border: 1px solid #ccc;
+            background: #fff6f6;
+            max-height: 150px;
+            overflow-y: auto;
+            cursor: pointer;
+        }
+        ul.suggestions li {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        ul.suggestions li:hover {
+            background-color: #e6b8b8;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Donor Details</h2>
+    <form method="POST">
+        <input name="name" placeholder="Full Name" required /><br />
+
+        <select name="blood_group" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option>
+            <option>O+</option><option>O-</option>
+        </select><br />
+
+        <input id="mobileInput" name="mobile" placeholder="Mobile Number" required /><br />
+
+        <!-- Location with autocomplete -->
+        <input name="location" id="locationInput" placeholder="Start typing district or city..." autocomplete="off" required />
+        <ul id="suggestions" class="suggestions"></ul><br />
+
+        <button type="submit">Submit</button>
+        <!-- Optional Back to Home button -->
+        <button type="button" class="back-button" onclick="window.location.href='/'">Back to Home</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='locations.js') }}"></script>
+    <script src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+
+    <script>
+      // Allow only numbers in mobile input
+      const mobileInput = document.getElementById('mobileInput');
+      mobileInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+      });
+    </script>
+</body>
+</html>

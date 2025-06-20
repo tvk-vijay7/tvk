@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TVL VIJAY Blood Donation Tamil Nadu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <style>
+        /* Logo container for hover effect */
+        .logo-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 20px auto 15px;
+            cursor: pointer;
+        }
+        .logo-container img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #e6000000; /* Slight transparent red */
+            transition: opacity 0.4s ease;
+        }
+        .logo-container img.hover-logo {
+            opacity: 0;
+        }
+        .logo-container:hover img.default-logo {
+            opacity: 0;
+        }
+        .logo-container:hover img.hover-logo {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Logo with hover effect -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='vijay.jpg') }}" alt="Blood Donation Logo" class="default-logo" />
+            <img src="{{ url_for('static', filename='vijay2.jpg') }}" alt="Alternate Logo" class="hover-logo" />
+        </div>
+
+        <h1>Donate Blood, Save Lives</h1>
+        <p>Thalapathy Vijay TVK, Tamil Nadu's blood donation network!</p>
+
+        <a href="/add-donor" class="button">Add Blood Donor</a>
+        <a href="/find-donor" class="button">Find Donor</a>
+    </main>
+
+    <footer>
+        &copy; 2025 CREATED WEBSITE THAT ROUND C AND ALSO CREATED BY KISHORE.K FORM AVADI TVK
+    </footer>
+</body>
+</html>

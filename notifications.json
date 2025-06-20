@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "message": "Someone searched for O+ blood donors in tiruvallur > avadi",
+        "timestamp": "2025-06-20 11:25:20",
+        "details": {
+            "blood_group": "O+",
+            "location": "tiruvallur > avadi",
+            "results_found": 1
+        },
+        "read": false
+    }
+]

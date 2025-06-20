@@ -1,0 +1,544 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: #e60000;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 900;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #e60000, #ff4444, #e60000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+/* Buttons */
+.button, button {
+    background: linear-gradient(135deg, #e60000, #b30000);
+    color: white;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.compact-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+    min-width: 140px;
+    text-align: center;
+}
+
+.button:hover, button:hover {
+    background: linear-gradient(135deg, #b30000, #990000);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.back-button {
+    background: linear-gradient(135deg, #555, #333);
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #333, #222);
+}
+
+.admin-button {
+    background: linear-gradient(135deg, #ff8800, #cc6600);
+}
+
+.admin-button:hover {
+    background: linear-gradient(135deg, #cc6600, #aa5500);
+}
+
+/* Button Container */
+.button-container {
+    margin: 30px 0;
+}
+
+/* Form Elements */
+input, select {
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #e60000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 0, 0, 0.3);
+}
+
+/* Donor Cards */
+.donor-card {
+    border: 1px solid #ddd;
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 500px;
+    text-align: left;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.donor-card p {
+    margin: 8px 0;
+    font-size: 1em;
+}
+
+.donor-card strong {
+    color: #e60000;
+}
+
+/* Suggestions Dropdown */
+.suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1000;
+}
+
+.suggestions li {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestions li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    padding: 15px 20px;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 2px solid #e60000;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Logo Styles */
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 4px solid #e60000;
+}
+
+/* Responsive Design */
+/* Mobile devices (up to 768px) */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .button, button {
+        display: block;
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .donor-card {
+        margin: 10px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .donor-actions {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    input, select {
+        width: 100%;
+        max-width: none;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .logo-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .logo-container img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .contact-section {
+        margin: 20px 0;
+        padding: 15px;
+    }
+    
+    .form-container, .search-container {
+        padding: 15px;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        margin: 5px 0;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .donors-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .notification-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .notification-actions {
+        align-self: flex-end;
+    }
+}
+
+/* Tablet devices (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .button, button {
+        padding: 12px 24px;
+    }
+    
+    .logo-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .logo-container img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .donors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+    }
+    
+    .stats-container {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    input, select {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+/* Large screens (1025px and up) */
+@media (min-width: 1025px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    .donors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+    }
+    
+    .admin-container {
+        max-width: 1100px;
+    }
+}
+
+/* Very small devices (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    .logo-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo-container img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contact-btn {
+        width: 180px;
+        justify-content: center;
+        font-size: 0.75em;
+        padding: 6px 12px;
+    }
+    
+    .button, button {
+        font-size: 0.9rem;
+        padding: 12px 16px;
+    }
+    
+    footer {
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #e60000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/* Contact Section */
+.contact-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(248, 248, 248, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-section p {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.instagram-btn {
+    background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);
+    color: white;
+}
+
+.instagram-btn:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4, #5B51D8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.contact-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* TVK Marquee */
+.tvk-marquee {
+    margin-top: 15px;
+    background: linear-gradient(90deg, #e60000, #ffcc00, #e60000);
+    border-radius: 5px;
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.marquee-text {
+    margin: 0 15px;
+}
+
+.tvk-flag-img {
+    height: 40px;
+    width: auto;
+    margin: 0 12px;
+    vertical-align: middle;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive design for contact buttons */
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .marquee-content {
+        font-size: 0.7em;
+        animation: marquee 15s linear infinite;
+    }
+}

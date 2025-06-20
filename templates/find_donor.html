@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Blood Donor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: radial-gradient(ellipse at center, #ffeb3b 0%, #ff9800 35%, #e60000 100%) !important;
+        }
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .results-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            border-color: #e60000;
+            outline: none;
+        }
+        .no-results {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        ul.suggestions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            background: #fff;
+            max-height: 150px;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+        }
+        ul.suggestions li {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        ul.suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="search-container">
+            <h2>Find a Donor</h2>
+            <form method="POST">
+                <select name="blood_group" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+
+                <input name="location" id="locationInput" placeholder="Enter Location" autocomplete="off" required>
+                <ul id="suggestions" class="suggestions"></ul>
+
+                <button type="submit">Search Donors</button>
+                <button type="button" class="back-button" onclick="window.location.href='/'">Back to Home</button>
+            </form>
+        </div>
+
+        {% if donors is not none %}
+            <div class="results-container">
+                <h3>Search Results:</h3>
+                {% if donors %}
+                    {% for donor in donors %}
+                        <div class="donor-card">
+                            <p><strong>Name:</strong> {{ donor.name }}</p>
+                            <p><strong>Blood Group:</strong> {{ donor.blood_group }}</p>
+                            <p><strong>Mobile:</strong> {{ donor.mobile }}</p>
+                            <p><strong>Location:</strong> {{ donor.location }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-results">
+                        <p>No donors found matching your criteria.</p>
+                        <p>Please try searching with different blood group or location.</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </main>
+
+    <script src="{{ url_for('static', filename='locations.js') }}"></script>
+    <script src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+</body>
+</html>
